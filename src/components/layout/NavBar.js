@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
-export default function NavBar() {
+export const NavBar = () => {
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -26,3 +26,5 @@ export default function NavBar() {
         </div>
     )
 }
+
+
