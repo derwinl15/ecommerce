@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { CartWidget } from '../CartWidget/CartWidget';
 
 
 export const NavBar = () => {
@@ -12,16 +13,18 @@ export const NavBar = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                            <Nav.Link href="#features">Inicio</Nav.Link>
-                            <Nav.Link href="#pricing">Nosotros</Nav.Link>
+                            <Nav.Link href="#home">Inicio</Nav.Link>
+                            <Nav.Link href="#about">Nosotros</Nav.Link>
                             <Nav.Link href="#portfolio">Portafolio</Nav.Link>
                             <Nav.Link href="#contact">Contacto</Nav.Link>
                             </Nav>
                             <Nav>
+                                <CartWidget/>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
+                
             </div>
         </div>
     )

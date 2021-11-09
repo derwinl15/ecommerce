@@ -1,0 +1,7 @@
+.CartWidget {
+    font-size: 25px;
+    color: white;
+    display: inline-flex;
+    vertical-align: top;
+    margin: 15px;  
+}
