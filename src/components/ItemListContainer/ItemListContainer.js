@@ -1,28 +1,36 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { ItemCount } from '../ItemCount/ItemCount'
-import { ProductCard } from '../ProductCard/ProductCard'
-import Phone3 from '../../assets/products/Phone3.jpg'
-import Phone2 from '../../assets/products/Phone2.png'
 import '../ItemListContainer/ItemListContainer.css'
+import { useEffect, useState } from 'react'
+import { pedirDatos } from '../../helpers/pedirDatos'
+import { ItemList } from '../ItemList/ItemList'
+import { Col, Container, Row, Spinner } from 'react-bootstrap'
 
 export const ItemListContainer = ( {greeting} ) => {
+ 
+    const [loading, setLoading] = useState(false)
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        setLoading(true)
+        pedirDatos()
+            .then((resp) => {
+                setProductos(resp)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
+    
     return (
-        <Container className="mt-2">
-            <Row>
-                <Col xs={12} md={12}>
-                    <h3>{greeting}</h3>
-                    <hr/>
-                </Col>
-            </Row>  
-            <Row className="ItemListContainer">  
-                <Col md={6} lg={6}>
-                    <ProductCard img={Phone3} name="LG K61" description="128 GB titanio 4 GB RAM"/>
-                </Col>
-                <Col md={6} lg={6}>
-                    <ProductCard img={Phone2} name="Samsung Galaxy S10" description="1 TB 8 GB RAM"/>
-                </Col>
-            </Row>
-        </Container>
+        <>
+             {
+                loading 
+                ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%',}}/>
+                : <ItemList productos={productos}/>
+            }
+        </>
     )
-}
+}   
