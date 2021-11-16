@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button'
 import React from 'react'
-import { Alert, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import '../ItemCount/ItemCount.css'
 import { useState } from 'react'
 
