@@ -12,7 +12,7 @@ export const ItemCount = ( { stock } ) => {
         if(stock>count){
             setCount(count + 1)
         }else{
-            alert("Producto sin stock")
+            alert("Producto sin mas stock")
         }
     }
     

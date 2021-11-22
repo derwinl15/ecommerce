@@ -1,20 +1,20 @@
 import React from 'react'
 import '../ItemListContainer/ItemListContainer.css'
 import { useEffect, useState } from 'react'
-import { pedirDatos } from '../../helpers/pedirDatos'
-import { ItemList } from '../ItemList/ItemList'
 import { Spinner } from 'react-bootstrap'
+import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { getItem } from '../../helpers/getItem'
 
-export const ItemListContainer = ( {greeting} ) => {
- 
+export const ItemDetailContainer = () => {
+
     const [loading, setLoading] = useState(false)
-    const [productos, setProductos] = useState([])
+    const [item, setItem] = useState([])
 
     useEffect(() => {
         setLoading(true)
-        pedirDatos()
+        getItem()
             .then((resp) => {
-                setProductos(resp)
+                setItem(resp)
             })
             .catch((err) => {
                 console.log(err)
@@ -29,7 +29,7 @@ export const ItemListContainer = ( {greeting} ) => {
              {
                 loading 
                 ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%',}}/>
-                : <ItemList productos={productos}/>
+                : <ItemDetail item={item}/>
             }
         </>
     )
