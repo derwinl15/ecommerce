@@ -34,5 +34,12 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 5000,
         pictureUrl: "https://via.placeholder.com/220"
+    },
+    {
+        id: 6,
+        title: "Producto 6",
+        description: "aaaaa vbbb",
+        price: 6000,
+        pictureUrl: "https://via.placeholder.com/220"
     }
 ]
