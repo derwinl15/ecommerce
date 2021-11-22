@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Row, Col, Container } from 'react-bootstrap'
+import { Card, Col, Button } from 'react-bootstrap'
 import { ItemCount } from "../ItemCount/ItemCount"
 
 export const Item = ( { prod } ) => {
@@ -13,7 +13,7 @@ export const Item = ( { prod } ) => {
                     <Card.Text>
                         {prod.description}
                     </Card.Text>
-                    <ItemCount stock={5}/>
+                <Button>Agregar</Button>
                 </Card.Body>    
             </Card>
         </Col>

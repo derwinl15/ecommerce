@@ -1,10 +1,10 @@
+import React from 'react'
 import { stock } from "../data/stock"
 
-
-export const pedirDatos = () => {
+export const getItem = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve (stock)
-        }, 1500)
+        }, 2000)
     })
 }
