@@ -1,20 +1,20 @@
 import React from 'react'
-import '../ItemListContainer/ItemListContainer.css'
 import { useEffect, useState } from 'react'
-import { Spinner } from 'react-bootstrap'
+import { Container, Row, Spinner } from 'react-bootstrap'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { getItem } from '../../helpers/getItem'
+import { useParams } from 'react-router'
 
 export const ItemDetailContainer = () => {
-
+    const [item, setItem] = useState()  
     const [loading, setLoading] = useState(false)
-    const [item, setItem] = useState([])
+    const { ItemId } = useParams();
 
     useEffect(() => {
         setLoading(true)
         getItem()
             .then((resp) => {
-                setItem(resp)
+                setItem( resp.find( item => item.id === Number(ItemId)) )
             })
             .catch((err) => {
                 console.log(err)
@@ -22,15 +22,19 @@ export const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [ItemId])
     
     return (
         <>
-             {
-                loading 
-                ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%',}}/>
-                : <ItemDetail item={item}/>
-            }
+            <Container className="my-2">
+                <Row>
+                    {
+                        loading 
+                        ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%',}}/>
+                        : <ItemDetail {...item} />
+                    }
+                </Row>
+            </Container>
         </>
     )
 }   

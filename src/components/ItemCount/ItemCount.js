@@ -38,8 +38,8 @@ export const ItemCount = ( { stock } ) => {
             <Button variant="outline-primary" onClick={decrementar}>-</Button>
             <Button variant="outline-secondary">{count}</Button>
             <Button variant="outline-primary" onClick={incrementar}>+</Button>
+            <Button className="m-2" variant="primary" onClick={productosAgregados}>Agregar al Carro</Button>
             <hr/>
-            <Button variant="primary" onClick={productosAgregados}>Agregar al Carro</Button>
         </Container>
     )
 }

@@ -1,0 +1,22 @@
+.navbar a {
+    color:white;
+    text-decoration: auto;
+}
+.navbar a .item {
+    color:grey !important;
+    text-decoration: auto;
+}
+.navbar :hover {
+    color: grey !important;
+}
+nav .show>.nav-link {
+    color: white !important;
+}
+.nav-link {
+    color: white !important;
+}
+
+
+
+
+
