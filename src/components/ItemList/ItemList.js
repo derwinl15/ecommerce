@@ -3,13 +3,13 @@ import { Container, Row } from 'react-bootstrap'
 import { Item } from '../Item/Item'
 
 
-export const ItemList = ( { productos } ) => {
+export const ItemList = ( { productos, greeting } ) => {
     return (
-        <Container className="my-2">
-            <h2>Productos</h2>
+        <Container className="my-3">
+            <h2>{greeting}</h2>
             <hr/>
-            <Row>
-                {productos.map( (prod) => <Item prod={prod}/> )}
+            <Row >
+                {productos.map( (prod) => <Item {...prod}/> )}
             </Row>
         </Container>
     )

@@ -1,4 +1,3 @@
-import React from 'react'
 import { stock } from "../data/stock"
 
 export const getItem = () => {
