@@ -8,8 +8,8 @@ export const ItemList = ( { productos, greeting } ) => {
         <Container className="my-3">
             <h2>{greeting}</h2>
             <hr/>
-            <Row >
-                {productos.map( (prod) => <Item {...prod}/> )}
+            <Row>
+                {productos.map( (prod, id) => <Item key={id} {...prod}/> )}
             </Row>
         </Container>
     )

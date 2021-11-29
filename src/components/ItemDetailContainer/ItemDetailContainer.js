@@ -30,7 +30,7 @@ export const ItemDetailContainer = () => {
                 <Row>
                     {
                         loading 
-                        ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%',}}/>
+                        ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%'}}/>
                         : <ItemDetail {...item} />
                     }
                 </Row>

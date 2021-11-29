@@ -8,17 +8,17 @@ import { Cart } from "./components/Cart/Cart";
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={ <ItemListContainer greeting="Pagina Principal"/>} />
-        <Route path="/productos" element={ <ItemListContainer greeting="Productos"/>} />
-        <Route path="/productos/:catId" element={ <ItemListContainer greeting="Productos"/>} />
-        <Route path="/detail/:ItemId" element={ <ItemDetailContainer />} />
-        <Route path="/cart" element={ <Cart greeting="Carrito de Compras" />}/>
-        <Route path="*" element={ <Navigate to="/" />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={ <ItemListContainer greeting="Pagina Principal"/>} />
+          <Route path="/productos" element={ <ItemListContainer greeting="Productos"/>} />
+          <Route path="/productos/:catId" element={ <ItemListContainer greeting="Productos"/>} />
+          <Route path="/detail/:ItemId" element={ <ItemDetailContainer />} />
+          <Route path="/cart" element={ <Cart greeting="Carrito de Compras" />}/>
+          <Route path="*" element={ <Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
