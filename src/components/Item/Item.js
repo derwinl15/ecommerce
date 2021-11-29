@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Card, Col, Button } from 'react-bootstrap'
 import '../Item/Item.css'
 
 export const Item = ( { id, pictureUrl, title, price, description, category } ) => {
@@ -12,7 +12,7 @@ export const Item = ( { id, pictureUrl, title, price, description, category } ) 
                 <hr/>
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
-                        <Card.Text>Precio $ {price}</Card.Text>
+                        <Card.Text>Precio: $ {price}</Card.Text>
                         <Card.Text>
                             {description}
                         </Card.Text>

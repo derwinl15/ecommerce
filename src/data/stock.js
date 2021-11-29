@@ -6,7 +6,8 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 2000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Tecnología'             
+        category: 'Tecnología',
+        stock: 20             
     },
     {
         id: 2,
@@ -14,7 +15,8 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 2000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Tecnología'     
+        category: 'Tecnología',
+        stock: 20     
     },
     {
         id: 3,
@@ -22,7 +24,8 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 3000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Deportes'
+        category: 'Deportes',
+        stock: 20
     },
     {
         id: 4,
@@ -30,7 +33,8 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 4000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Ropa'
+        category: 'Ropa',
+        stock: 20
     },
     {
         id: 5,
@@ -38,7 +42,8 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 5000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Ropa'
+        category: 'Ropa',
+        stock: 20
     },
     {
         id: 6,
@@ -46,6 +51,7 @@ export const stock = [
         description: "aaaaa vbbb",
         price: 6000,
         pictureUrl: "https://via.placeholder.com/220",
-        category: 'Zapatos'
+        category: 'Zapatos',
+        stock: 20
     }
 ]
