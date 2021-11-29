@@ -8,13 +8,13 @@ export const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg md" bg="success" variant="dark">
             <Container >
-                <Navbar.Brand><Link to="/">E-Commerce</Link></Navbar.Brand>
+                <Link className="navbar-brand" to="/">E-Commerce</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />                       
                 <Navbar.Collapse id="responsive-navbar-nav">                          
-                    <Nav className="me-auto">
-                    <Nav.Link><Link to="/">Inicio</Link></Nav.Link>
-                    <Nav.Link><Link to="/productos">Productos</Link></Nav.Link>
-                    <Nav.Link> <Link to="#">Contacto</Link></Nav.Link>  
+                    <Nav className="me-auto">  
+                    <Link className="nav-link" to="/">Inicio</Link>
+                    <Link className="nav-link" to="/productos">Productos</Link>
+                    <Link className="nav-link" to="">Contacto</Link> 
                     <NavDropdown title="Categorias" id="basic-nav-dropdown">
                     <NavDropdown.Item ><Link className="item" to="/productos/Tecnología">Tecnología</Link></NavDropdown.Item>
                     <NavDropdown.Item ><Link className="item" to="/productos/Ropa">Ropa</Link></NavDropdown.Item>
@@ -23,8 +23,8 @@ export const NavBar = () => {
                     </NavDropdown>  
                     </Nav> 
                     <Nav className="mr-auto">  
-                    <Nav.Link> <Link to="#">Crea tu cuenta</Link></Nav.Link>
-                    <Nav.Link> <Link to="#">Ingresa</Link></Nav.Link>
+                    <Link className="nav-link" to="#">Crea tu cuenta</Link>
+                    <Link className="nav-link" to="#">Ingresa</Link>
                     </Nav> 
                     <Link to="/cart"><CartWidget /></Link>
                     <Form className="d-flex">
@@ -41,3 +41,10 @@ export const NavBar = () => {
         </Navbar>
     )
 }
+
+
+
+
+
+
+
