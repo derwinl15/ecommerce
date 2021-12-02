@@ -6,6 +6,8 @@ import { BsFillTrashFill } from 'react-icons/bs'
 export const CartItem = ( {id, title, price, count } ) => {
 
     const { removeItem } = useContext(CartContext)
+
+    const subtotal = price * count;
  
     return (
         <tbody key={id}>
@@ -13,7 +15,7 @@ export const CartItem = ( {id, title, price, count } ) => {
                 <td>{title}</td>
                 <td>{price}</td>
                 <td>{count}</td>
-                <td>{price*count}</td>
+                <td>{subtotal}</td>
                 <td>
                     <Button className="btn btn-danger" 
                     onClick={() => {removeItem(id)}}
