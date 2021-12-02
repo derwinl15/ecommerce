@@ -7,7 +7,7 @@ import '../ItemCount/ItemCount.css'
 export const ItemCount = ( { maxStock, count, setCount, onAdd } ) => {
 
     const handleDecrementar = () => {
-        count > 1 
+        count > 0 
         ? setCount(count - 1)
         : alert("Debe elegir al menos un producto")
     }
@@ -21,10 +21,29 @@ export const ItemCount = ( { maxStock, count, setCount, onAdd } ) => {
        
     return (
         <Container className="Button">
-            <Button variant="outline-primary" onClick={handleDecrementar}>-</Button>
+            <Button 
+                variant={count === 0 ? 'outline-danger' : 'outline-primary'} 
+                disabled={count === 0}
+                onClick={handleDecrementar}
+            >
+                -
+            </Button>
             <Button variant="outline-secondary">{count}</Button>
-            <Button variant="outline-primary" onClick={handleIncrementar}>+</Button>
-            <Button className="m-2" variant="primary" onClick={onAdd}>Agregar al Carrito</Button>
+            <Button 
+                variant={count === maxStock ? 'outline-danger' : 'outline-primary'}
+                disabled={count === maxStock} 
+                onClick={handleIncrementar}
+            >
+                +
+            </Button>
+            <Button 
+                className="m-2" 
+                variant="primary" 
+                disabled={count === 0}
+                onClick={onAdd}
+            >
+                Agregar al Carrito
+            </Button>
             <hr/>
         </Container>
     )

@@ -2,8 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from '../ItemList/ItemList'
-import { Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router'
+import { Loader } from '../Loader/Loader'
 
 export const ItemListContainer = ( { greeting } ) => {
     const [loading, setLoading] = useState(false)
@@ -32,7 +32,7 @@ export const ItemListContainer = ( { greeting } ) => {
         <>
              {
                 loading 
-                ? <Spinner animation="border" style={{position: 'absolute', left: '50%', top: '50%'}}/>
+                ? <Loader />
                 : <ItemList productos={productos} greeting={greeting}/>
             }
         </>
