@@ -7,8 +7,8 @@ import { CartItem } from './CartItem'
 
 export const Cart = ( {greeting} ) => {
 
-    const {carrito , clear } = useContext(CartContext)
-
+    const {carrito , clear, total } = useContext(CartContext)
+    
     return (
         <Container className="my-3">
             <Row>
@@ -27,13 +27,20 @@ export const Cart = ( {greeting} ) => {
                                                 <th>Nombre</th>
                                                 <th>Precio</th>
                                                 <th>Cantidad</th>
-                                                <th>Total</th>
+                                                <th>SubTotal</th>
                                                 <th>Acciones</th>
                                                 </tr>
                                             </thead>
                                                 {
-                                                    carrito.map( (prod) => <CartItem {...prod}/> ) 
+                                                    carrito.map( (prod, id) => <CartItem {...prod} key={id}/> ) 
                                                 }
+                                                <thead>
+                                                <tr>
+                                                    <th colSpan="3">Total</th>
+                                                    <th colSpan="2">{total()}</th>
+                                                    
+                                                </tr>
+                                                </thead>
                                     </Table>
                                 </Col>  
                             </Row>  

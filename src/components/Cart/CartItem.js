@@ -5,15 +5,15 @@ import { BsFillTrashFill } from 'react-icons/bs'
 
 export const CartItem = ( {id, title, price, count } ) => {
 
-    const { removeItem, totalBuy } = useContext(CartContext)
-
+    const { removeItem } = useContext(CartContext)
+ 
     return (
         <tbody key={id}>
             <tr>
                 <td>{title}</td>
                 <td>{price}</td>
                 <td>{count}</td>
-                <td>{totalBuy()}</td>
+                <td>{price*count}</td>
                 <td>
                     <Button className="btn btn-danger" 
                     onClick={() => {removeItem(id)}}
@@ -22,6 +22,7 @@ export const CartItem = ( {id, title, price, count } ) => {
                     </Button>
                 </td>
             </tr>
+
         </tbody>  
     )
 }
