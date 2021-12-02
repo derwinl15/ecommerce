@@ -10,7 +10,7 @@ export const AppRouter = () => {
         {path:"/", element: <ItemListContainer greeting="Pagina Principal"/>},
         {path:"/productos", element: <ItemListContainer greeting="Productos"/>},
         {path:"/productos/:catId", element: <ItemListContainer greeting="Productos"/>},
-        {path:"/detail/:ItemId", element: <ItemDetailContainer />},
+        {path:"/detail/:ItemId", element: <ItemDetailContainer greeting="Productos" />},
         {path:"/cart", element: <Cart greeting="Carrito de Compras" />},
         {path:"*", element: <Navigate to="/" />},
     ])

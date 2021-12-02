@@ -22,7 +22,7 @@ export const ItemCount = ( { maxStock, count, setCount, onAdd } ) => {
     return (
         <Container className="Button">
             <Button 
-                variant={count === 0 ? 'outline-danger' : 'outline-primary'} 
+                variant={count === 0 ? 'btn btn-danger' : 'outline-primary'} 
                 disabled={count === 0}
                 onClick={handleDecrementar}
             >
@@ -30,7 +30,7 @@ export const ItemCount = ( { maxStock, count, setCount, onAdd } ) => {
             </Button>
             <Button variant="outline-secondary">{count}</Button>
             <Button 
-                variant={count === maxStock ? 'outline-danger' : 'outline-primary'}
+                variant={count === maxStock ? 'btn btn-danger' : 'outline-primary'}
                 disabled={count === maxStock} 
                 onClick={handleIncrementar}
             >

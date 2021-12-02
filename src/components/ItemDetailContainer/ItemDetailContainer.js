@@ -1,12 +1,12 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { getItem } from '../../helpers/getItem'
 import { useParams } from 'react-router'
 import { Loader } from '../Loader/Loader'
 
-export const ItemDetailContainer = () => {
+export const ItemDetailContainer = ( {greeting} ) => {
     const [item, setItem] = useState()  
     const [loading, setLoading] = useState(false)
     const { ItemId } = useParams();
@@ -28,7 +28,9 @@ export const ItemDetailContainer = () => {
     return (
         <>
             <Container className="my-2">
-                <Row>
+                <h2>{greeting}</h2>
+                <hr/>
+                <Row>                   
                     {
                         loading 
                         ? <Loader />
