@@ -25,11 +25,12 @@ export const CartProvider = ( {children} ) => {
         
         const quantity = () => {
             return carrito.reduce((acc, prod) => acc + prod.count, 0)
-        }
+        }    
 
-        const totalBuy = () => {
-            return carrito.reduce((acc, prod) => acc + prod.price * prod.count, 0)
+        const total = () => { 
+            return carrito.reduce((acc, {price, count}) => acc + price * count, 0)       
         }
+        
         
     return (
         <CartContext.Provider value={{
@@ -39,7 +40,7 @@ export const CartProvider = ( {children} ) => {
             clear,
             isInCart,
             quantity,
-            totalBuy
+            total,
         }}> 
             {children}        
         </CartContext.Provider>
