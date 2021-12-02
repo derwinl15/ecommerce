@@ -1,26 +1,29 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { BrowserRouter} from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
-import { Cart } from "./components/Cart/Cart";
+import { CartProvider } from "./context/CartContext";
+import { AppRouter } from "./router/AppRouter";
+
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route path="/" element={ <ItemListContainer greeting="Pagina Principal"/>} />
-          <Route path="/productos" element={ <ItemListContainer greeting="Productos"/>} />
-          <Route path="/productos/:catId" element={ <ItemListContainer greeting="Productos"/>} />
-          <Route path="/detail/:ItemId" element={ <ItemDetailContainer />} />
-          <Route path="/cart" element={ <Cart greeting="Carrito de Compras" />}/>
-          <Route path="*" element={ <Navigate to="/" />} />
-        </Routes>
+        <AppRouter />
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 }
 
 export default App;
+
+
+/* <Routes>
+<Route path="/" element={ <ItemListContainer greeting="Pagina Principal"/>} />
+<Route path="/productos" element={ <ItemListContainer greeting="Productos"/>} />
+<Route path="/productos/:catId" element={ <ItemListContainer greeting="Productos"/>} />
+<Route path="/detail/:ItemId" element={ <ItemDetailContainer />} />
+<Route path="/cart" element={ <Cart greeting="Carrito de Compras" />}/>
+<Route path="*" element={ <Navigate to="/" />} />
+</Routes> */

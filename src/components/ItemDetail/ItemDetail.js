@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../ItemDetail/ItemDetail.css'
 import { Col, Card, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 
 export const ItemDetail = ( { id, pictureUrl, title, price, description, stock } ) => {
 
+    const { addItem, isInCart } = useContext(CartContext)
+
     const navigate = useNavigate()
     const [count, setCount] = useState(0)
-    const [agregado, setAgregado] = useState(false)
 
     const handleVolver = () => {
         navigate(-1)
@@ -20,18 +22,15 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
     const handleAgregar = () => {
         if(count > 0) {
            count === 1 
-           ? alert(`Agregaste ${count} producto al carro de compras`)
-           : alert(`Agregaste ${count} productos al carro de compras`)
-
-           console.log(`Producto Agregado:`, {
-               id,
-               title,
-               price,
-               description,
-               count
+            ? alert(`Agregaste ${count} producto al carro de compras`)
+            : alert(`Agregaste ${count} productos al carro de compras`)
+           addItem({
+                id,
+                title,
+                price,
+                pictureUrl,
+                count
            })
-    
-           setAgregado(true)
        }       
     }
 
@@ -47,14 +46,14 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
                     </Card.Text>
 
                 {
-                    !agregado 
-                    ?   <ItemCount 
-                            maxStock={stock} 
-                            count={count} 
-                            setCount={setCount}
-                            onAdd={handleAgregar}
-                        />
-                    :   <Link to="/cart" className="btn btn-success mx-2">Terminar mi compra</Link>
+                    !isInCart(id) 
+                        ?   <ItemCount 
+                                maxStock={stock} 
+                                count={count} 
+                                setCount={setCount}
+                                onAdd={handleAgregar}
+                            />
+                        :   <Link to="/cart" className="btn btn-success mx-2">Terminar mi compra</Link>
                 }
 
                     <Button onClick={handleVolver}>Volver</Button>
