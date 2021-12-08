@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
-import { getItem } from '../../helpers/getItem'
 import { useParams } from 'react-router'
 import { Loader } from '../Loader/Loader'
+import { doc, getDoc } from 'firebase/firestore/lite'
+import { db } from '../../firebase/config'
 
 export const ItemDetailContainer = ( {greeting} ) => {
     const [item, setItem] = useState()  
@@ -13,12 +14,16 @@ export const ItemDetailContainer = ( {greeting} ) => {
 
     useEffect(() => {
         setLoading(true)
-        getItem()
-            .then((resp) => {
-                setItem( resp.find( item => item.id === Number(ItemId)) )
-            })
-            .catch((err) => {
-                console.log(err)
+        // Referencia
+        const docRef = doc(db, 'productos', ItemId)
+
+        // GET referencia
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({
+                    id: doc.id,
+                    ...doc.data()
+                })
             })
             .finally(() => {
                 setLoading(false)

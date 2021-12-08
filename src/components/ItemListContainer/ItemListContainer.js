@@ -1,9 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { pedirDatos } from '../../helpers/pedirDatos'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router'
 import { Loader } from '../Loader/Loader'
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore/lite'
+import { db } from '../../firebase/config'
 
 export const ItemListContainer = ( { greeting } ) => {
     const [loading, setLoading] = useState(false)
@@ -12,23 +13,25 @@ export const ItemListContainer = ( { greeting } ) => {
 
     useEffect(() => {
         setLoading(true)
-        pedirDatos()
-            .then((resp) => {
-                if(!catId){
-                    setProductos(resp)
-                }else {
-                    setProductos( resp.filter ( prod => prod.category === catId) )
-                }
-            })
-            .catch((err) => {
-                console.log(err)
+        // Referencia
+        const productosRef = collection(db, 'productos')
+        // consulta con condiciones y uso de operador ternario para validar si es consulta a una categoria o a todos los productos
+        const q = catId ? query(productosRef, where('category', '==', catId)) : productosRef    
+        // GET referencia
+        getDocs(q)
+            .then((collection) => {
+                const items = collection.docs.map((doc) => ({
+                    id: doc.id, 
+                    ...doc.data()
+                }))
+                setProductos(items)
             })
             .finally(() => {
                 setLoading(false)
             })
     }, [catId])
     
-    return (
+    return ( 
         <>
              {
                 loading 
