@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import '../ItemDetail/ItemDetail.css'
-import { Col, Card, Button, Row  } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { useState } from 'react'
@@ -80,7 +80,7 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
 
 
 
-{/* <Col className="mb-5">
+/* <Col className="mb-5">
         <Card key={id} className="card m-3" >
             <Card.Img className="img" variant="top" src={pictureUrl} alt={title} />
             <Card.Body>
@@ -104,4 +104,4 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
                 <Button onClick={handleVolver}>Volver</Button>
             </Card.Body>
         </Card>
-        </Col>   */}
+        </Col>   */
