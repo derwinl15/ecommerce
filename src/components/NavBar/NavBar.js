@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import React from 'react'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { CartWidget } from '../CartWidget/CartWidget';
 import '../NavBar/NavBar.css'
 
