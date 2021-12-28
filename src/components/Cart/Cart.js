@@ -47,7 +47,7 @@ export const Cart = ( {greeting} ) => {
                             <Row>
                                 <Col lg={12}>
                                     <Button className="btn btn-danger my-3 mx-3" onClick={clear}>Vaciar carrito</Button>
-                                    <Button className="btn btn-success" >Teminar Compra</Button>
+                                    <Link to="/checkout" className="btn btn-success" >Teminar Compra</Link>
                                 </Col>
                             </Row>
                         </>
