@@ -6,13 +6,14 @@
 
 Características del producto
 
-Funciones de compra
+<b>Funciones de compra</b>
 
-Característica	Codificado?	Descripción
-Ver carrito	✔	Posibilidad de ver el carrito y sus artículos.
-Añadir artículo	✔	Posibilidad de agregar un nuevo artículo al carrito
-Eliminar un artículo	✔	Capacidad de eliminar un artículo del carrito
-Verificar	✔	Posibilidad de pagar
+| Característica  |  Codificado?       | Descripción  |
+|----------|:-------------:|:-------------|
+| Ver carrito | &#10004; | Posibilidad de ver el carrito y sus artículos. |
+| Añadir artículo | &#10004; | Posibilidad de agregar un nuevo artículo al carrito |
+| Eliminar un artículo | &#10004; | Capacidad de eliminar un artículo del carrito |
+| Verificar | &#10004; | Posibilidad de comprar |
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
