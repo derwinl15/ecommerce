@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { CartWidget } from '../CartWidget/CartWidget';
 import '../NavBar/NavBar.css'
 
@@ -22,20 +22,7 @@ export const NavBar = () => {
                     <NavDropdown.Item ><Link className="item" to="/productos/Deportes">Deportes</Link></NavDropdown.Item>
                     </NavDropdown>  
                     </Nav> 
-                    <Nav className="mr-auto">  
-                    <Link className="nav-link" to="#">Crea tu cuenta</Link>
-                    <Link className="nav-link" to="#">Ingresa</Link>
-                    </Nav> 
                     <Link to="/cart"><CartWidget /></Link>
-                    <Form className="d-flex">
-                        <FormControl
-                            type="Buscar"
-                            placeholder="Buscar"
-                            className="me-2"
-                            aria-label="Buscar"
-                        />
-                        <Button variant="outline-light">Buscar</Button>
-                    </Form>
                 </Navbar.Collapse>  
             </Container>
         </Navbar>

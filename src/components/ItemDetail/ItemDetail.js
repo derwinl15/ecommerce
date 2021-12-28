@@ -39,7 +39,7 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
             <div className="card" key={id}>
                 <div className="row no-gutters">
                     <div className="col-sm-5">
-                        <Card.Img className="img" variant="top" src={pictureUrl} alt={title} />
+                        <Card.Img className="img-detail" variant="top" src={pictureUrl} alt={title} />
                     </div>
                     <div className="col-sm-7">
                         <div className="card-body-detail">
@@ -58,7 +58,7 @@ export const ItemDetail = ( { id, pictureUrl, title, price, description, stock }
                                                 setCount={setCount}
                                                 onAdd={handleAgregar}
                                             />
-                                        :   <Link to="/cart" className="btn btn-success mx-2">Terminar mi compra</Link>
+                                        :   <Link to="/cart" className="btn btn-success mx-2">Comprar</Link>
                                 }
                             <Button onClick={handleVolver}>Volver</Button>                               
                             </Card.Text >

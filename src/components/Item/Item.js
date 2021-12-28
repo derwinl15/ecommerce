@@ -9,7 +9,7 @@ export const Item = ( { id, pictureUrl, title, price, description, category } ) 
             <Link className="link" to={`/detail/${id}`}>
                 <Card key={id} className="card m-3 mb-0" style={{ width: '18rem', padding: '10px'}}>
                 <Card.Img variant="top" src={pictureUrl} alt={title} />
-                <hr/>
+                <hr className="hr"/>
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>Precio: $ {price}</Card.Text>

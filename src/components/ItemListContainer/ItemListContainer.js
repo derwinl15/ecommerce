@@ -30,13 +30,14 @@ export const ItemListContainer = ( { greeting } ) => {
                 setLoading(false)
             })
     }, [catId])
-    
+
     return ( 
         <>
-             {
+                  
+            {
                 loading 
                 ? <Loader />
-                : <ItemList productos={productos} greeting={greeting}/>
+                : <ItemList productos={productos} setProductos={setProductos} greeting={greeting}/>
             }
         </>
     )
