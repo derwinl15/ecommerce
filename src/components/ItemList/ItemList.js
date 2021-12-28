@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 import { Item } from '../Item/Item'
-import { Form, FormControl, Button, Navbar, Col } from 'react-bootstrap';
+import { Form, FormControl, Col } from 'react-bootstrap';
 import { useState } from 'react';
 
 export const ItemList = ( { productos, greeting, setProductos } ) => {

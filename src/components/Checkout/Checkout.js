@@ -124,16 +124,3 @@ export const Checkout = ( {greeting} ) => {
         </>
     )
 }
-
-
-// carrito.forEach(prod => {
-//     const docRef = doc(productosRef, prod.id)
-    
-//     getDoc(docRef)
-//         .then((doc) => {
-
-//             updateDoc(doc.ref, {
-//                 stock: doc.data().stock - prod.count
-//             })
-//         })
-// });

@@ -35,15 +35,12 @@ const submit = async (e) => {
                 <h2>{greeting}</h2>
                 <hr/>
             <Form onClick={submit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail" onChange={handleEmail}>
+                <Form.Group className="mb-3" onChange={handleEmail}>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Email" />
-                    <Form.Text className="text-muted">
-                    
-                    </Form.Text>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword" onChange={handlePassword}>
+                <Form.Group className="mb-3" onChange={handlePassword}>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
