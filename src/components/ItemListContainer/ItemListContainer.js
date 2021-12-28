@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router'
 import { Loader } from '../Loader/Loader'
-import { collection, getDocs, query, where, orderBy } from 'firebase/firestore/lite'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import { db } from '../../firebase/config'
 
 export const ItemListContainer = ( { greeting } ) => {
@@ -30,13 +30,14 @@ export const ItemListContainer = ( { greeting } ) => {
                 setLoading(false)
             })
     }, [catId])
-    
+
     return ( 
         <>
-             {
+                  
+            {
                 loading 
                 ? <Loader />
-                : <ItemList productos={productos} greeting={greeting}/>
+                : <ItemList productos={productos} setProductos={setProductos} greeting={greeting}/>
             }
         </>
     )
