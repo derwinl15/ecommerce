@@ -2,9 +2,17 @@
 
 👜 Proyecto educativo simple para realizar compras
 
-Características
+# Características
 
-# Getting Started with Create React App
+Características del producto
+
+Funciones de compra
+
+Característica	Codificado?	Descripción
+Ver carrito	✔	Posibilidad de ver el carrito y sus artículos.
+Añadir artículo	✔	Posibilidad de agregar un nuevo artículo al carrito
+Eliminar un artículo	✔	Capacidad de eliminar un artículo del carrito
+Verificar	✔	Posibilidad de pagar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
